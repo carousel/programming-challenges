@@ -1,4 +1,7 @@
 <?php
+/**
+ * reverse a word
+ */
 
     function reverseWord($word){
         $arr = str_split($word);
