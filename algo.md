@@ -48,4 +48,21 @@ Problem has many solutions
 *loops
 *recursion?
 
+#DATA STRUCTURES
+-array
+-list
+-linked list
+-double linked list
+-stack
+-queue
+-graph
+-matrix(table)
 
+#SPACE/TIME EFFICIENCY?
+
+
+#IMPORTANT CONCEPTS
+-data structure
+-control structures
+-steps (algorithm)
+-bit O notation (describe performance and complexity of algorithm)
