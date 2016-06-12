@@ -19,6 +19,9 @@
         }
         return $reversed;
     };
+    /**
+     * factorial
+     */
 
     function factorial($num){
         if($num < 2){
@@ -28,6 +31,9 @@
         }
             return $factorial;
     }
+    /**
+     * find lobest word in a sentence (using regexp)
+     */
     function longestWord($sentence){
         $clean = preg_replace("/[^a-zA-Z0-9]+/", " ", $sentence);
         $arr = explode(' ',$clean);
@@ -46,41 +52,39 @@
         return $results;
     }
     /**
-     * description
-     * check input
-     * find
+     * change letters
      */
 
-function letterChanges($str){
-    $str = str_split($str);
-    $alpha = [];
-    $in = [];
-    foreach (range('a','z') as $val) {
-        array_push($alpha,$val);
-    }
-    $result = [];
-    $out = preg_grep("/[^a-zA-Z]+/",$str);
-    $in = preg_grep("/[a-zA-Z]+/",$str);
-    $intersect = array_intersect($in,$alpha);
-    foreach ($intersect as $key => $val) {
-        foreach ($alpha as $k => $v) {
-            if($val == $v){
-                $in[$key] = ++$v;
+    function letterChanges($str){
+        $str = str_split($str);
+        $alpha = [];
+        $in = [];
+        foreach (range('a','z') as $val) {
+            array_push($alpha,$val);
+        }
+        $result = [];
+        $out = preg_grep("/[^a-zA-Z]+/",$str);
+        $in = preg_grep("/[a-zA-Z]+/",$str);
+        $intersect = array_intersect($in,$alpha);
+        foreach ($intersect as $key => $val) {
+            foreach ($alpha as $k => $v) {
+                if($val == $v){
+                    $in[$key] = ++$v;
+                }
             }
         }
+        $vowels = ['a','e','i','o','u'];
+        $in  =   str_replace($vowels, array_map('strtoupper', $vowels), $in);
+        foreach ($in as $k => $v) {
+            $result[$k] = $v;
+        }
+        foreach ($out as $key => $val) {
+            $result[$key] = $val;
+        }
+        ksort($result);
+        $str = implode('',$result);
+        return $str;
     }
-    $vowels = ['a','e','i','o','u'];
-    $in  =   str_replace($vowels, array_map('strtoupper', $vowels), $in);
-    foreach ($in as $k => $v) {
-        $result[$k] = $v;
-    }
-    foreach ($out as $key => $val) {
-        $result[$key] = $val;
-    }
-    ksort($result);
-    $str = implode('',$result);
-    return $str;
-}
 function letterCapitalize($str) {  
 
    $result = [];
@@ -104,11 +108,33 @@ function letterCapitalize($str) {
             }
             return $x;
         }
+    function minVal($arr){
+        $min = $arr[0];
+        for ($i = 0; $i < count($arr); $i++) {
+            if($min > $arr[$i]){
+                $min = $arr[$i];
+                $arr[$i] = $min;
+            }
+        }
+        return  $min;
+    }
+
+    function maxVal($arr){
+        $max = $arr[0];
+        for ($i = 0; $i < count($arr); $i++) {
+            if($max < $arr[$i]){
+                $max = $arr[$i];
+            }
+        }
+        return $max;
+    }
 
     echo "Reversed word:" . reverseWord("hello world ") . "\n";
     echo "Factorial: " . factorial(5) . "\n";
     echo "Longest word is: " . longestWord('letter @after letter!!!') . "\n";
     echo "Letter changes: " . letterChanges('abde,1') . "\n";
     echo "Letter Capitalize: " . letterCapitalize('hello world') . "\n";
-    echo "Simple Adding: " . simpleAdding(140);
+    echo "Simple Adding: " . simpleAdding(140) . "\n";
+    echo "Miminum array value is: " . minVal([1,20,4,2,58]) . "\n";
+    echo "Maximum array value is: " . maxVal([1,20,4,2,58]);
 

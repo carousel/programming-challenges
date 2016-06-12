@@ -1,6 +1,30 @@
 ###Algorithm definition:
     * step by step procedure
     * language independent
+    * function in algorithm interface
+    * problem can have many algorithms (one input, many algorithm, one output)
+###It is important to make difference between problem, algorithm and implementation(control structures)
+###Classification
+*divide & conquer
+*dynamic programming (fibonacci)
+*greedy
+*brute force
+*backtracking
+*recursive
+*branch & bound?
+*randomized
+
+###Sorting concept
+*inplace
+    *constant amount of memory,swap 
+    *external memory
+*sorted(organized)
+*unsorted(linear search)
+*recursive/non-resursive
+*integers
+*lexicographical
+
+
 ### From data structure point:
     * search
     * sort
@@ -63,6 +87,28 @@ Problem has many solutions
 
 #IMPORTANT CONCEPTS
 -data structure
--control structures
+-control structures (what is variable?)
 -steps (algorithm)
 -bit O notation (describe performance and complexity of algorithm)
+#MATH TERMINOLOGY
+* prime numbers
+* equlibrium
+* fizzbuzz
+* modulos (clock,between 0 and second number)
+
+#KOMBINATORIKA
+##RASPOREDI (PREBROJAVANJE)
+* permutacije 
+    * koristimo sve elemente skupa
+    * bez ponavljanja (n! faktorijal, puni i skraceni!)
+    * sa ponavljanjem (formula)
+* varijacije
+    * koristimo podskupove
+    * redoslijed je bitan
+    * bez ponavljanja (k-permutacija,razliciti elementi)
+    * sa ponavljanjem (ukljucuje sve elemente)
+* kombinacija
+    * redoslijed nije bitan
+
+
+#ARRAY (Index based)
